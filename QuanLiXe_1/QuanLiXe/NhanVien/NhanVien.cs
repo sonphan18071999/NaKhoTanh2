@@ -99,9 +99,11 @@ namespace QuanLiXe
             //ed.ShowDialog();
             Edit ed = new Edit();
             ed.txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+            ed.txtMaNV.Text = ed.txtMaNV.Text.Trim();
             ed.txtHo.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
             ed.txtTen.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
-            if(dgvNhanVien.CurrentRow.Cells[3].Value.ToString()=="male")
+            dgvNhanVien.CurrentRow.Cells[3].Value.ToString().Trim();
+            if (dgvNhanVien.CurrentRow.Cells[3].Value.ToString()=="male")
             {
                 ed.radioMale.Checked = true;
             }
@@ -109,12 +111,12 @@ namespace QuanLiXe
             {
                 ed.radioFemale.Checked = true;
             }
-            ed.dtpBirthday.Value=(DateTime)dgvNhanVien.CurrentRow.Cells[4].Value;
+            //ed.dtpBirthday.Value=(DateTime)dgvNhanVien.CurrentRow.Cells[4].Value;
             ed.txtSdt.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
             ed.txtAddress.Text = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
             ed.txtCmnd.Text = dgvNhanVien.CurrentRow.Cells[7].Value.ToString();
-            
-            if(dgvNhanVien.CurrentRow.Cells[9].Value.ToString()=="Giam Sat")
+            dgvNhanVien.CurrentRow.Cells[9].Value=dgvNhanVien.CurrentRow.Cells[9].Value.ToString().Trim();
+            if (dgvNhanVien.CurrentRow.Cells[9].Value.ToString()=="Giam Sat")
             {
                 ed.radioGS.Checked = true;
             }

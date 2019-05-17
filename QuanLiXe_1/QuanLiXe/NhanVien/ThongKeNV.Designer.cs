@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvTho = new System.Windows.Forms.DataGridView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ptbBack = new System.Windows.Forms.PictureBox();
             this.ptbGiamSat = new System.Windows.Forms.PictureBox();
             this.ptbVanPhong = new System.Windows.Forms.PictureBox();
@@ -168,6 +166,5 @@
         private System.Windows.Forms.PictureBox ptbGiamSat;
         private System.Windows.Forms.DataGridView dgvTho;
         private System.Windows.Forms.PictureBox ptbBack;
-        private System.Windows.Forms.Timer timer1;
     }
 }
