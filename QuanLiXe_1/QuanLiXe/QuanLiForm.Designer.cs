@@ -50,6 +50,8 @@
             this.tongDoanThuUC = new QuanLiXe.UserControls.TongDoanThuUC();
             this.quanLiTatCaXe = new QuanLiXe.UserControls.QuanLiTatCaXe();
             this.giaoDienQuanLiXeUC = new QuanLiXe.UserControls.GiaoDienQuanLiXeUC();
+            this.addNhanVienUC1 = new QuanLiXe.AddNhanVienUC();
+            this.thongKeNVUC11 = new QuanLiXe.ThongKeNVUC1();
             this.panelForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -257,11 +259,13 @@
             // 
             // NhanVienUC
             // 
+            this.NhanVienUC.AutoScroll = true;
             this.NhanVienUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.NhanVienUC.Location = new System.Drawing.Point(350, 5);
+            this.NhanVienUC.Location = new System.Drawing.Point(335, 0);
             this.NhanVienUC.Name = "NhanVienUC";
             this.NhanVienUC.Size = new System.Drawing.Size(1431, 789);
             this.NhanVienUC.TabIndex = 62;
+            this.NhanVienUC.Load += new System.EventHandler(this.NhanVienUC_Load);
             // 
             // HopDongGui
             // 
@@ -318,12 +322,27 @@
             this.giaoDienQuanLiXeUC.Size = new System.Drawing.Size(1620, 1169);
             this.giaoDienQuanLiXeUC.TabIndex = 2;
             // 
+            // addNhanVienUC1
+            // 
+            this.addNhanVienUC1.Location = new System.Drawing.Point(350, 132);
+            this.addNhanVienUC1.Name = "addNhanVienUC1";
+            this.addNhanVienUC1.Size = new System.Drawing.Size(1301, 662);
+            this.addNhanVienUC1.TabIndex = 63;
+            // 
+            // thongKeNVUC11
+            // 
+            this.thongKeNVUC11.Location = new System.Drawing.Point(350, 3);
+            this.thongKeNVUC11.Name = "thongKeNVUC11";
+            this.thongKeNVUC11.Size = new System.Drawing.Size(1444, 769);
+            this.thongKeNVUC11.TabIndex = 64;
+            // 
             // QuanLiForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1762, 798);
+            this.Controls.Add(this.thongKeNVUC11);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.menuStrip);
@@ -332,6 +351,7 @@
             this.Controls.Add(this.tongDoanThuUC);
             this.Controls.Add(this.quanLiTatCaXe);
             this.Controls.Add(this.giaoDienQuanLiXeUC);
+            this.Controls.Add(this.addNhanVienUC1);
             this.Controls.Add(this.NhanVienUC);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "QuanLiForm";
@@ -372,5 +392,7 @@
         private System.Windows.Forms.Button btHopDongCongTy;
         private UserControls.HopDongGui HopDongGui;
         private NhanVien1 NhanVienUC;
+        private AddNhanVienUC addNhanVienUC1;
+        private ThongKeNVUC1 thongKeNVUC11;
     }
 }

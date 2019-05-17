@@ -28,9 +28,6 @@ D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\bin\Debug\DESKTOP-RRR
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\bin\Debug\QuanLiXe.exe.config
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\bin\Debug\QuanLiXe.exe
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\bin\Debug\QuanLiXe.pdb
-D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe1605.csprojAssemblyReference.cache
-D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.Edit.resources
-D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.AddNhanVien.resources
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.AddCustomer.resources
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.BaiXeForm.resources
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.FormChinhGia.resources
@@ -48,4 +45,6 @@ D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe160
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe1605.csproj.CoreCompileInputs.cache
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.exe
 D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.pdb
-D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.ThongKeNV.resources
+D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.AddNhanVienUC.resources
+D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.EditNhanVienUC.resources
+D:\Do_An_Win\newest_1\gd2QLXmasterCopy\QuanLiXe_1\QuanLiXe\obj\Debug\QuanLiXe.ThongKeNVUC1.resources

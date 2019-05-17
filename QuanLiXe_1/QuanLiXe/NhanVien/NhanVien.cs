@@ -22,12 +22,18 @@ namespace QuanLiXe
         NhanVien nv = new NhanVien();
         private void NhanVien1_Load(object sender, EventArgs e)
         {
+            editNhanVienUC2.Visible = false;
+            addNhanVienUC2.Visible = false;
+            thongKeNVUC11.Visible = false;
+            AddNhanVienUC ad = new AddNhanVienUC();
+            ad.Show();
             dgvNhanVien.DataSource = nv.getAllNV();
             dgvNhanVien.Show();
             dgvNhanVien.RowTemplate.Height = 90;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             picCol = (DataGridViewImageColumn)dgvNhanVien.Columns[8];
             picCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
         }
         public void refresh()
         {
@@ -38,10 +44,15 @@ namespace QuanLiXe
             picCol = (DataGridViewImageColumn)dgvNhanVien.Columns[8];
             picCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
+        //AddNhanVienUC adnc = new AddNhanVienUC();
+        //NhanVien1 nv1 = new NhanVien1();
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddNhanVien ad = new AddNhanVien();
-            ad.Show();
+            addNhanVienUC2.Show();
+            dgvNhanVien.Visible = false;
+            editNhanVienUC2.Visible = false;
+            thongKeNVUC11.Visible = false;
+
         }
     
         private void btnSearch_Click(object sender, EventArgs e)
@@ -57,9 +68,12 @@ namespace QuanLiXe
             picCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
             dgvNhanVien.AllowUserToAddRows = false;
         }
-
+        
         private void Edit(object sender, EventArgs e)
         {
+            addNhanVienUC2.Visible = false;
+            editNhanVienUC2.Visible = false;
+            dgvNhanVien.Visible = false;
             #region
             //string manv = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
             //manv = manv.Trim();
@@ -97,49 +111,49 @@ namespace QuanLiXe
             //byte[] pic;
             //pic = (byte[])dgvNhanVien.CurrentRow.Cells[7].Value;
             //ed.ShowDialog();
-            Edit ed = new Edit();
-            ed.txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
-            ed.txtMaNV.Text = ed.txtMaNV.Text.Trim();
-            ed.txtHo.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
-            ed.txtTen.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
-            dgvNhanVien.CurrentRow.Cells[3].Value.ToString().Trim();
-            if (dgvNhanVien.CurrentRow.Cells[3].Value.ToString()=="male")
+            editNhanVienUC2.Visible = true;
+            editNhanVienUC2.txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+            editNhanVienUC2.txtMaNV.Text = editNhanVienUC2.txtMaNV.Text.Trim();
+            editNhanVienUC2.txtHo.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
+            editNhanVienUC2.txtTen.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
+            dgvNhanVien.CurrentRow.Cells[3].Value = dgvNhanVien.CurrentRow.Cells[3].Value.ToString().Trim();
+            if (dgvNhanVien.CurrentRow.Cells[3].Value.ToString()=="Female")
             {
-                ed.radioMale.Checked = true;
+                editNhanVienUC2.radioFemale.Checked = true;
             }
             else
             {
-                ed.radioFemale.Checked = true;
+                editNhanVienUC2.radioMale.Checked = true;
+               
             }
-            //ed.dtpBirthday.Value=(DateTime)dgvNhanVien.CurrentRow.Cells[4].Value;
-            ed.txtSdt.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
-            ed.txtAddress.Text = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
-            ed.txtCmnd.Text = dgvNhanVien.CurrentRow.Cells[7].Value.ToString();
+            editNhanVienUC2.dtpBirthday.Value = (DateTime)dgvNhanVien.CurrentRow.Cells[4].Value;
+            editNhanVienUC2.txtSdt.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
+            editNhanVienUC2.txtAddress.Text = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
+            editNhanVienUC2.txtCmnd.Text = dgvNhanVien.CurrentRow.Cells[7].Value.ToString();
             dgvNhanVien.CurrentRow.Cells[9].Value=dgvNhanVien.CurrentRow.Cells[9].Value.ToString().Trim();
             if (dgvNhanVien.CurrentRow.Cells[9].Value.ToString()=="Giam Sat")
             {
-                ed.radioGS.Checked = true;
+                editNhanVienUC2.radioGS.Checked = true;
             }
             else if(dgvNhanVien.CurrentRow.Cells[9].Value.ToString()=="Van Phong")
             {
-                ed.radioVP.Checked = true;
+                editNhanVienUC2.radioVP.Checked = true;
             }
             else
             {
-                ed.radioTho.Checked = true;
+                editNhanVienUC2.radioTho.Checked = true;
             }
             byte[] pic;
             pic = (byte[])dgvNhanVien.CurrentRow.Cells[8].Value;
             MemoryStream picture = new MemoryStream(pic);
-            ed.ptbAva.Image = Image.FromStream(picture);
-           
-
-            ed.ShowDialog();
+            editNhanVienUC2.ptbAva.Image = Image.FromStream(picture);
+            editNhanVienUC2.Show();
         }
 
         private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string id = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+           
             Global.MANV(id);
         }
 
@@ -150,11 +164,13 @@ namespace QuanLiXe
             
 
         }
-
+        
         private void btnThongKeNV_Click(object sender, EventArgs e)
         {
-            ThongKeNV nv = new ThongKeNV();
-            nv.ShowDialog();
+            thongKeNVUC11.Visible = true;
+            dgvNhanVien.Visible = false;
+            editNhanVienUC2.Visible = false;
+            addNhanVienUC2.Visible = false;
         }
 
         private void NhanVien1_Click(object sender, EventArgs e)
@@ -173,21 +189,25 @@ namespace QuanLiXe
             //xnv.ShowDialog();
             string manv=dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
             manv = manv.Trim();
+            
             DialogResult dlr=MessageBox.Show("Bạn muốn xóa nhân viên có mã " + manv ,"Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            
             if (dlr == DialogResult.Yes)
             {
                 dgvNhanVien.DataSource = nv.DeleteNhanVien(manv);
-                MessageBox.Show("Nhân viên có mã " + manv+"đã bị xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvNhanVien.Show();
+                MessageBox.Show("Nhân viên có mã " + manv+" đã bị xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
-            dgvNhanVien.DataSource = nv.getAllNV();
-            dgvNhanVien.Show();
-            dgvNhanVien.RowTemplate.Height = 90;
-            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            picCol = (DataGridViewImageColumn)dgvNhanVien.Columns[8];
-            picCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            
         }
 
         private void dgvNhanVien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
         {
             dgvNhanVien.DataSource = nv.getAllNV();
             dgvNhanVien.Show();
@@ -195,6 +215,22 @@ namespace QuanLiXe
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             picCol = (DataGridViewImageColumn)dgvNhanVien.Columns[8];
             picCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dgvNhanVien.Visible = true;
+
+        }
+
+        private void btnShow_Click_1(object sender, EventArgs e)
+        {
+            dgvNhanVien.DataSource = nv.getAllNV();
+            dgvNhanVien.Show();
+            thongKeNVUC11.Visible = false;
+            dgvNhanVien.RowTemplate.Height = 90;
+            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+            picCol = (DataGridViewImageColumn)dgvNhanVien.Columns[8];
+            picCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dgvNhanVien.Visible = true;
+            addNhanVienUC2.Visible = false;
+            editNhanVienUC2.Visible = false;
         }
     }
 }

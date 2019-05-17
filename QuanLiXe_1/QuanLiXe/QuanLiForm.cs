@@ -121,5 +121,23 @@ namespace QuanLiXe
         {
 
         }
+
+        private void NhanVienUC_Load(object sender, EventArgs e)
+        {
+
+        }
+        AddNhanVienUC uc = new AddNhanVienUC();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addNhanVienUC1.Visible = false;
+            uc.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            addNhanVienUC1.Visible = true;
+            NhanVienUC.Visible = false;
+            
+        }
     }
 }

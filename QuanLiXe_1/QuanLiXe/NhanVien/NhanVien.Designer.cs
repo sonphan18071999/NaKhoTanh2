@@ -35,7 +35,11 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShow = new System.Windows.Forms.Button();
             this.btnThongKeNV = new System.Windows.Forms.Button();
+            this.editNhanVienUC2 = new QuanLiXe.EditNhanVienUC();
+            this.thongKeNVUC11 = new QuanLiXe.ThongKeNVUC1();
+            this.addNhanVienUC2 = new QuanLiXe.AddNhanVienUC();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,9 +65,11 @@
             // 
             // dgvNhanVien
             // 
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Location = new System.Drawing.Point(33, 97);
             this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.ReadOnly = true;
             this.dgvNhanVien.Size = new System.Drawing.Size(1151, 812);
             this.dgvNhanVien.TabIndex = 3;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
@@ -107,6 +113,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.btnShow);
             this.panel1.Controls.Add(this.btnThongKeNV);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnEdit);
@@ -116,6 +123,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 812);
             this.panel1.TabIndex = 7;
+            // 
+            // btnShow
+            // 
+            this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.Location = new System.Drawing.Point(41, 572);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(180, 52);
+            this.btnShow.TabIndex = 64;
+            this.btnShow.Text = "Show full lít";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click_1);
             // 
             // btnThongKeNV
             // 
@@ -128,17 +146,42 @@
             this.btnThongKeNV.UseVisualStyleBackColor = true;
             this.btnThongKeNV.Click += new System.EventHandler(this.btnThongKeNV_Click);
             // 
+            // editNhanVienUC2
+            // 
+            this.editNhanVienUC2.Location = new System.Drawing.Point(-222, 61);
+            this.editNhanVienUC2.Name = "editNhanVienUC2";
+            this.editNhanVienUC2.Size = new System.Drawing.Size(1426, 623);
+            this.editNhanVienUC2.TabIndex = 9;
+            // 
+            // thongKeNVUC11
+            // 
+            this.thongKeNVUC11.Location = new System.Drawing.Point(33, 97);
+            this.thongKeNVUC11.Name = "thongKeNVUC11";
+            this.thongKeNVUC11.Size = new System.Drawing.Size(1290, 622);
+            this.thongKeNVUC11.TabIndex = 8;
+            // 
+            // addNhanVienUC2
+            // 
+            this.addNhanVienUC2.Location = new System.Drawing.Point(-21, 78);
+            this.addNhanVienUC2.Name = "addNhanVienUC2";
+            this.addNhanVienUC2.Size = new System.Drawing.Size(1301, 662);
+            this.addNhanVienUC2.TabIndex = 10;
+            // 
             // NhanVien1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.addNhanVienUC2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.editNhanVienUC2);
+            this.Controls.Add(this.thongKeNVUC11);
             this.Controls.Add(this.dgvNhanVien);
             this.Name = "NhanVien1";
-            this.Size = new System.Drawing.Size(1460, 930);
+            this.Size = new System.Drawing.Size(1460, 913);
             this.Load += new System.EventHandler(this.NhanVien1_Load);
             this.Click += new System.EventHandler(this.NhanVien1_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
@@ -158,5 +201,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnThongKeNV;
         public System.Windows.Forms.DataGridView dgvNhanVien;
+        private System.Windows.Forms.Button btnShow;
+        private AddNhanVienUC addNhanVienUC1;
+        private EditNhanVienUC editNhanVienUC1;
+        private ThongKeNVUC1 thongKeNVUC11;
+        private EditNhanVienUC editNhanVienUC2;
+        private AddNhanVienUC addNhanVienUC2;
     }
 }
